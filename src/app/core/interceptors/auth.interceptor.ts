@@ -32,13 +32,13 @@ export class AuthInterceptor implements HttpInterceptor {
         const token = this._tokenService.getToken();
 
         this._authService.isAuthenticated$.subscribe((auth) => {
-            if(auth) {
-                authReq = req.clone({
-                    headers: req.headers.set(TOKEN_HEADER_KEY, BEARER + token),
-                });
-            } else {
-                this._router.navigateByUrl("auth/login");
-            }
+            // if(auth) {
+            //     authReq = req.clone({
+            //         headers: req.headers.set(TOKEN_HEADER_KEY, BEARER + token),
+            //     });
+            // } else {
+            //     this._router.navigateByUrl("auth/login");
+            // }
         });
 
         return next.handle(authReq);
