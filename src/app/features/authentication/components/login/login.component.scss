@@ -1,0 +1,20 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+mat-card {
+  width: 40%;
+//   margin-top: -100px; /* Ajustez selon les besoins */
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+mat-card-title {
+    padding: 24px;
+}

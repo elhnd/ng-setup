@@ -1,0 +1,26 @@
+<mat-toolbar color="primary" >
+  <span>App</span>
+  
+  <div style="margin-left: 200px;">
+    @for (item of navItems; track $index) {
+      @if(displayMenu(item)) {
+        @if(item.children) {
+          <button mat-button [matMenuTriggerFor]="panel.safeMenu"><mat-icon>{{item.icon}}</mat-icon>{{ item.label }}</button>
+          <app-menu-panel #panel [items]="item.children"></app-menu-panel>
+        } @else {
+          <button mat-button [routerLink]="item.link"><mat-icon>{{item.icon}}</mat-icon>{{ item.label }}</button>
+        }
+      }
+    }
+  </div>
+
+  <!-- <span class="spacer"></span>
+    @for (item of paramsNavItems; track $index) {
+      @if(item.children) {
+        <button mat-button [matMenuTriggerFor]="panel.safeMenu"><mat-icon>{{item.icon}}</mat-icon>{{ item.label }}</button>
+        <app-menu-panel #panel [items]="item.children"></app-menu-panel>
+      } @else {
+        <button mat-button [routerLink]="item.link"><mat-icon>{{item.icon}}</mat-icon>{{ item.label }}</button>
+      }
+    } -->
+</mat-toolbar>

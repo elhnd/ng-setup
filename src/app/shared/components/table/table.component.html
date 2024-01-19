@@ -1,0 +1,26 @@
+<ng-container>
+  <table mat-table [dataSource]="tableDataSource" matSort>
+    @for (tableColumn of tableColumns; track $index) {
+      <div [matColumnDef]="tableColumn.name">
+        <th mat-header-cell *matHeaderCellDef>
+          {{tableColumn.name}}
+        </th>
+
+        <td mat-cell *matCellDef="let element">
+            <app-cell-table  [tableColumn]="tableColumn" [element]="element" />
+        </td>
+      </div>
+    }
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  @if (isPageable) {
+    <mat-paginator
+      [pageSizeOptions]="paginationSizes"
+      [pageSize]="defaultPageSize"
+      showFirstLastButtons 
+      (page)="pageChanged($event)">
+    </mat-paginator>
+  }
+</ng-container>

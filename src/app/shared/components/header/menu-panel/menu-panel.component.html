@@ -1,0 +1,15 @@
+<mat-menu #menu="matMenu">
+
+    @for(item of items; track $index){
+
+        @if (displayMenu(item)) {
+            @if(!item.children) {
+                <button mat-menu-item [routerLink]="item.link">{{item.label}}</button>
+            } @else {
+                <button mat-menu-item [matMenuTriggerFor]="innerPanel.safeMenu">{{item.label}}</button>
+                <app-menu-panel #innerPanel [items]="item.children"></app-menu-panel>
+            }
+        }
+    }
+
+</mat-menu>

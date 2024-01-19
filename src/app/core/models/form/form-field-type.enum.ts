@@ -1,0 +1,15 @@
+export enum FormFieldType {
+    TEXT='text',
+    PASSWORD='password',
+    TEXTAREA='textarea',
+    EMAIL='email',
+    NUMBER='number',
+    FILE='file',
+    SELECT='select',
+    // IMAGE='image',
+    DATE='date',
+    CHECKBOX='checkbox',
+    RADIO='radio',
+    SLIDE_TOGGLE='slide_toggle',
+    SLIDER='slider',
+}

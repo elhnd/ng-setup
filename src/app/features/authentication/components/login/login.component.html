@@ -1,0 +1,14 @@
+<div class="login-container">
+  <mat-card>
+    <mat-card-title >Connexion</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="connexion()">
+
+        @for (field of fields; track $index) {
+          <app-form [form]="form" [field]="field" />
+        }
+        <button type="submit" mat-raised-button color="primary">Se connecter</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
